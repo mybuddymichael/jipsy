@@ -14,3 +14,8 @@
 
 (defn expected [expected actual]
   (throw (Exception. (str "Expected " expected ". Found \"" actual "\"."))))
+
+(defn factor [s]
+  (if (re-seq factor-regex s)
+    s
+    (expected "factor" s)))
