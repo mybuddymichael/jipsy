@@ -8,7 +8,8 @@
 ;; factor = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
 ;; mathop = "+" | "-" | "*" | "/" ;
 ;; space = " ";
-;; expression = factor | "(" , mathop , expression , { expression } , ")" ;
+;; expression = factor
+;;            | "(" , mathop , space , expression , { space , expression } , ")" ;
 
 (def factor-regex #"^[0-9]$")
 (def mathop-regex #"^[\+\-\*\/]$")
