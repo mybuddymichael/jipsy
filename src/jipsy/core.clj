@@ -11,3 +11,6 @@
 
 (def factor-regex #"^[0-9]$")
 (def mathop-regex #"^[\+\-\*\/]$")
+
+(defn expected [expected actual]
+  (throw (Exception. (str "Expected " expected ". Found \"" actual "\"."))))
