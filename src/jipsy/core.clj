@@ -19,3 +19,7 @@
   (if (re-seq factor-regex s)
     s
     (expected "factor" s)))
+
+(defn expression [s]
+  (if (= 1 (count s))
+    (factor s)))
