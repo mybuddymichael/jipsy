@@ -12,6 +12,13 @@
 ;; expression = factor
 ;;            | "(" , mathop , space , expression , { space , expression } , ")" ;
 
+(def parser
+  (instaparse/parser
+    "expression = factor | '(' mathop space expression { space expression } ')'
+     factor = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+     mathop = '+' | '-' | '*' | '/'
+     space = ' '"))
+
 (def factor-regex #"^[0-9]$")
 (def mathop-regex #"^[\+\-\*\/]$")
 
