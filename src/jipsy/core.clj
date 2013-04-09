@@ -18,18 +18,3 @@
      factor = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
      mathop = '+' | '-' | '*' | '/'
      space = ' '"))
-
-(def factor-regex #"^[0-9]$")
-(def mathop-regex #"^[\+\-\*\/]$")
-
-(defn expected [expected actual]
-  (throw (Exception. (str "Expected " expected ". Found \"" actual "\"."))))
-
-(defn factor [s]
-  (if (re-seq factor-regex s)
-    s
-    (expected "factor" s)))
-
-(defn expression [s]
-  (if (= 1 (count s))
-    (factor s)))
