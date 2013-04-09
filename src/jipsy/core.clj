@@ -1,4 +1,5 @@
-(ns jipsy.core)
+(ns jipsy.core
+  (:require [instaparse.core :as instaparse]))
 
 (defmacro debug [x]
   `(let [x# ~x]
