@@ -11,10 +11,10 @@
   "program = { <whitespace> } expression { <whitespace> } { expression }
    expression = number
               | name
-              | <'('> mathop <whitespace> expression { <whitespace> expression } <')'>
+              | <'('> name <whitespace> expression { <whitespace> expression } <')'>
    number = #'[0-9]+([.][0-9]+)?'
+   name = #'[A-Za-z][A-Za-z0-9_]*' | mathop
    mathop = '+' | '-' | '*' | '/' | '^' | '%'
-   name = #'[A-Za-z][A-Za-z0-9_]*'
    whitespace = #'[\\s,]+'")
 
 (def parse (instaparse/parser grammar))
