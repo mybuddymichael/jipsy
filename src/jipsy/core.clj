@@ -7,7 +7,8 @@
      x#))
 
 (def grammar
-  "expression = factor
+  "program = { <whitespace> } expression { <whitespace> } { expression }
+   expression = factor
               | name
               | <'('> mathop <whitespace> expression { <whitespace> expression } <')'>
    factor = digit+
