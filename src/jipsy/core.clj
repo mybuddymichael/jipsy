@@ -13,7 +13,7 @@
               | name
               | <'('> mathop <whitespace> expression { <whitespace> expression } <')'>
    number = #'[0-9]+([.][0-9]+)?'
-   mathop = '+' | '-' | '*' | '/'
+   mathop = '+' | '-' | '*' | '/' | '^' | '%'
    name = #'[A-Za-z][A-Za-z0-9_]*'
    whitespace = #'[\\s,]+'")
 
