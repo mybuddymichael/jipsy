@@ -6,7 +6,7 @@
      (println "debug:" '~x "=" x#)
      x#))
 
-(def parser
+(def parse
   (instaparse/parser
     "expression = factor
                 | <'('> mathop <whitespace> expression { <whitespace> expression } <')'>
