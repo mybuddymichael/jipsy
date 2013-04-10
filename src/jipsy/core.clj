@@ -8,10 +8,10 @@
 
 (def grammar
   "program = { <whitespace> } expression { <whitespace> } { expression }
-   expression = factor
+   expression = number
               | name
               | <'('> mathop <whitespace> expression { <whitespace> expression } <')'>
-   factor = digit+
+   number = digit+
    <digit> = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
    mathop = '+' | '-' | '*' | '/'
    name = #'[A-Za-z][A-Za-z0-9_]*'
