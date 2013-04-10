@@ -11,8 +11,7 @@
    expression = number
               | name
               | <'('> mathop <whitespace> expression { <whitespace> expression } <')'>
-   number = digit+ [ '.' digit+ ]
-   <digit> = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+   number = #'[0-9]+([.][0-9]+)?'
    mathop = '+' | '-' | '*' | '/'
    name = #'[A-Za-z][A-Za-z0-9_]*'
    whitespace = #'[\\s,]+'")
