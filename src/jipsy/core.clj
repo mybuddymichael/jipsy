@@ -1,5 +1,6 @@
 (ns jipsy.core
-  (:require [instaparse.core :as instaparse]))
+  (:require [instaparse.core :as instaparse]
+            [clojure.pprint :use [pprint]]))
 
 (defmacro debug [x]
   `(let [x# ~x]
