@@ -13,10 +13,10 @@
         | <ws>? expression <ws>?
    definition = <'(def'> <ws> identifier <ws> expression <')'>
    expression = number
-              | name
-              | <'('> name <whitespace> expression { <whitespace> expression } <')'>
+              | identifier
+              | <'('> (identifier|mathop) <ws> expression (<ws> expression)* <')'>
    number = #'[0-9]+([.][0-9]+)?'
-   name = #'[A-Za-z][A-Za-z0-9_]*' | mathop
+   identifier = !keyword #'[A-Za-z][A-Za-z0-9_]*'
    mathop = '+' | '-' | '*' | '/' | '^' | '%'
    keyword = 'def' | 'fn'
    ws = #'[\\s,]+'")
