@@ -11,6 +11,7 @@
   "program = form*
    form = <ws>? definition <ws>?
         | <ws>? expression <ws>?
+   definition = <'(def'> <ws> identifier <ws> expression <')'>
    expression = number
               | name
               | <'('> name <whitespace> expression { <whitespace> expression } <')'>
