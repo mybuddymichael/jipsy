@@ -18,6 +18,6 @@
    number = #'[0-9]+([.][0-9]+)?'
    name = #'[A-Za-z][A-Za-z0-9_]*' | mathop
    mathop = '+' | '-' | '*' | '/' | '^' | '%'
-   whitespace = #'[\\s,]+'")
+   ws = #'[\\s,]+'")
 
 (def parse (instaparse/parser grammar))
