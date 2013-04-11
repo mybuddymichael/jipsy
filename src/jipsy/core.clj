@@ -9,6 +9,8 @@
 
 (def grammar
   "program = form*
+   form = <ws>? definition <ws>?
+        | <ws>? expression <ws>?
    expression = number
               | name
               | <'('> name <whitespace> expression { <whitespace> expression } <')'>
