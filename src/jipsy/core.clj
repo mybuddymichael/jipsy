@@ -8,7 +8,7 @@
      x#))
 
 (def grammar
-  "program = { <whitespace> } expression { <whitespace> } { expression }
+  "program = form*
    expression = number
               | name
               | <'('> name <whitespace> expression { <whitespace> expression } <')'>
