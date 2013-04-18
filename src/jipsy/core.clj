@@ -17,9 +17,11 @@
    definition = <'(defn'> <ws> identifier <ws> expression <')'>
    expression = number
               | object
+              | array
               | identifier
               | <'('> (identifier|mathop) <ws> expression (<ws> expression)* <')'>
 
+   array = <'['> <ws>* expression* <ws>* (<ws>+ expression <ws>*)* <']'>
    object = <'{'> (<ws>* keyword <ws>+ expression <ws>*)* <'}'>
    keyword = <':'>identifier
    number = #'[0-9]+([.][0-9]+)?'
