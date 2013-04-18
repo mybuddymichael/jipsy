@@ -19,11 +19,13 @@
               | object
               | identifier
               | <'('> (identifier|mathop) <ws> expression (<ws> expression)* <')'>
+
    object = <'{'> (<ws>* keyword <ws>+ expression <ws>*)* <'}'>
    keyword = <':'>identifier
    number = #'[0-9]+([.][0-9]+)?'
    identifier = !reserved #'[A-Za-z][A-Za-z0-9_]*'
    mathop = '+' | '-' | '*' | '/' | '^' | '%'
+
    reserved = 'def' | 'fn'
    ws = #'[\\s,]+'")
 
