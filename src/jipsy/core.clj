@@ -11,7 +11,10 @@
   "program = form*
    form = <ws>? definition <ws>?
         | <ws>? expression <ws>?
-   definition = <'(def'> <ws> identifier <ws> expression <')'>
+        | <ws>? assignment <ws>?
+
+   assignment = <'(def'> <ws> identifier <ws> expression <')'>
+   definition = <'(defn'> <ws> identifier <ws> expression <')'>
    expression = number
               | object
               | identifier
