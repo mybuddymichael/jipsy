@@ -16,9 +16,9 @@
               | identifier
               | <'('> (identifier|mathop) <ws> expression (<ws> expression)* <')'>
    number = #'[0-9]+([.][0-9]+)?'
-   identifier = !keyword #'[A-Za-z][A-Za-z0-9_]*'
+   identifier = !reserved #'[A-Za-z][A-Za-z0-9_]*'
    mathop = '+' | '-' | '*' | '/' | '^' | '%'
-   keyword = 'def' | 'fn'
+   reserved = 'def' | 'fn'
    ws = #'[\\s,]+'")
 
 (def parse (instaparse/parser grammar))
