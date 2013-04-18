@@ -23,7 +23,7 @@
 
    array = <'['> <ws>* expression* <ws>* (<ws>+ expression <ws>*)* <']'>
    object = <'{'> (<ws>* keyword <ws>+ expression <ws>*)* <'}'>
-   keyword = <':'>identifier
+   keyword = <':'> identifier
    number = #'[0-9]+([.][0-9]+)?'
    identifier = !reserved #'[A-Za-z][A-Za-z0-9_]*'
    mathop = '+' | '-' | '*' | '/' | '^' | '%'
