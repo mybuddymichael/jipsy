@@ -20,7 +20,10 @@
               | object
               | array
               | identifier
-              | <'('> (identifier|mathop) <ws> expression (<ws> expression)* <')'>
+              | call
+
+
+   call = <'('> (identifier|mathop) <ws> expression (<ws> expression)* <')'>
 
    array = <'['> <ws>* expression* <ws>* (<ws>+ expression <ws>*)* <']'>
    string = #'\".*\"'
