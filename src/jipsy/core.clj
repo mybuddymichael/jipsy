@@ -13,7 +13,7 @@
         | <ws>? expression <ws>?
         | <ws>? assignment <ws>?
 
-   assignment = <'(def'> <ws> identifier <ws> expression <')'>
+   assignment = <'(def'> <ws> identifier (<ws> expression)? <ws>* <')'>
    definition = <'(defn'> <ws> identifier <ws> expression <')'>
    expression = number
               | string
