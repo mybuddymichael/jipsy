@@ -22,14 +22,14 @@
               | identifier
               | call
 
-
    call = <'('> (identifier|mathop) <ws> expression (<ws> expression)* <')'>
 
-   array = <'['> <ws>* expression* <ws>* (<ws>+ expression <ws>*)* <']'>
+   number = #'[0-9]+([.][0-9]+)?'
    string = #'\".*\"'
    object = <'{'> (<ws>* keyword <ws>+ expression <ws>*)* <'}'>
+   array = <'['> <ws>* expression* <ws>* (<ws>+ expression <ws>*)* <']'>
+
    keyword = <':'> identifier
-   number = #'[0-9]+([.][0-9]+)?'
    identifier = !reserved #'[A-Za-z][A-Za-z0-9_]*'
    mathop = '+' | '-' | '*' | '/' | '^' | '%'
 
