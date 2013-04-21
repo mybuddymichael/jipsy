@@ -13,8 +13,11 @@
         | <ws>? assignment <ws>?
         | <ws>? expression <ws>?
 
+   definition = <'(defn'> <ws> identifier <ws> argslist <ws> expression <')'>
+   argslist = <'['> <ws>* identifier* <ws>* <']'>
+
    assignment = <'(def'> <ws> identifier (<ws> expression)? <ws>* <')'>
-   definition = <'(defn'> <ws> identifier <ws> expression <')'>
+
    expression = number
               | string
               | object
