@@ -25,7 +25,7 @@
               | identifier
               | call
 
-   call = <'('> (identifier|mathop) <ws> expression (<ws> expression)* <')'>
+   call = <'('> <ws>* (identifier|mathop) (<ws> expression)* <ws>* <')'>
 
    number = #'[0-9]+([.][0-9]+)?'
    string = #'\"[^\"]*\"'
