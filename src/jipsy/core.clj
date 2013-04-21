@@ -10,8 +10,8 @@
 (def grammar
   "program = form*
    form = <ws>? definition <ws>?
-        | <ws>? expression <ws>?
         | <ws>? assignment <ws>?
+        | <ws>? expression <ws>?
 
    assignment = <'(def'> <ws> identifier (<ws> expression)? <ws>* <')'>
    definition = <'(defn'> <ws> identifier <ws> expression <')'>
