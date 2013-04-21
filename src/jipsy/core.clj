@@ -36,4 +36,4 @@
    reserved = 'def' | 'fn'
    ws = #'[\\s,]+'")
 
-(def parse (instaparse/parser grammar))
+(def parser (instaparse/parser grammar))
