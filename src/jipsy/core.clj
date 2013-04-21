@@ -25,7 +25,7 @@
    call = <'('> (identifier|mathop) <ws> expression (<ws> expression)* <')'>
 
    number = #'[0-9]+([.][0-9]+)?'
-   string = #'\".*\"'
+   string = #'\"[^\"]*\"'
    object = <'{'> (<ws>* keyword <ws>+ expression <ws>*)* <'}'>
    array = <'['> <ws>* expression* <ws>* (<ws>+ expression <ws>*)* <']'>
 
