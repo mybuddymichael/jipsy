@@ -25,7 +25,9 @@
               | identifier
               | call
 
-   call = <'('> <ws>* (identifier|mathop) (<ws> expression)* <ws>* <')'>
+   call = <'('> <ws>* identifier (<ws> expression)* <ws>* <')'>
+        | <'('> <ws>* (addop | mulop) <ws>+ expression (<ws>+ expression)* <ws>* <')'>
+        | <'('> <ws>* (expop | modop) <ws>+ expression <ws>+ expression (<ws>+ expression)* <ws>* <')'>
 
    number = #'[0-9]+([.][0-9]+)?'
    string = #'\"[^\"]*\"'
@@ -34,7 +36,10 @@
 
    keyword = <':'> identifier
    identifier = !reserved #'[A-Za-z][A-Za-z0-9_]*'
-   mathop = '+' | '-' | '*' | '/' | '^' | '%'
+   addop = '+' | '-'
+   mulop = '*' | '/'
+   expop = '^'
+   modop = '%'
 
    reserved = 'def' | 'fn'
    ws = #'[\\s,]+'")
