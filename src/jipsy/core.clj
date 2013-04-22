@@ -13,10 +13,10 @@
         | <ws>? assignment <ws>?
         | <ws>? expression <ws>?
 
-   definition = <'(defn'> <ws> identifier <ws> argslist <ws> expression <')'>
+   definition = <'(defn'> <ws>+ identifier <ws>+ argslist <ws>+ expression <')'>
    argslist = <'['> <ws>* identifier* <ws>* <']'>
 
-   assignment = <'(def'> <ws> identifier (<ws> expression)? <ws>* <')'>
+   assignment = <'(def'> <ws>+ identifier (<ws>+ expression)? <ws>* <')'>
 
    expression = number
               | string
@@ -25,7 +25,7 @@
               | identifier
               | call
 
-   call = <'('> <ws>* identifier (<ws> expression)* <ws>* <')'>
+   call = <'('> <ws>* identifier (<ws>+ expression)* <ws>* <')'>
         | <'('> <ws>* (addop | mulop) <ws>+ expression (<ws>+ expression)* <ws>* <')'>
         | <'('> <ws>* (expop | modop) <ws>+ expression <ws>+ expression (<ws>+ expression)* <ws>* <')'>
 
