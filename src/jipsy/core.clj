@@ -24,6 +24,7 @@
               | array
               | identifier
               | call
+              | comment
 
    call = <'('> <ws>* identifier (<ws>+ expression)* <ws>* <')'>
         | <'('> <ws>* (addop | mulop) <ws>+ expression (<ws>+ expression)* <ws>* <')'>
@@ -42,6 +43,8 @@
    modop = '%'
 
    reserved = 'def' | 'fn'
+
+   comment = <';'>+ <ws*> #'[^\\s].*$'
    ws = #'[\\s,]+'")
 
 (def parser (instaparse/parser grammar))
