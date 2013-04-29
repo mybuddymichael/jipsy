@@ -45,6 +45,6 @@
    reserved = 'def' | 'fn'
 
    comment = <';'>+ <ws*> #'[^\\s].*$'
-   ws = #'[\\s,]+'")
+   ws = #'[\\s,]'")
 
 (def parser (instaparse/parser grammar))
