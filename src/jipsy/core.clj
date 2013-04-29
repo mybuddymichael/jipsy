@@ -41,7 +41,6 @@
    mulop = '*' | '/'
    expop = '^'
    modop = '%'
-
    reserved = 'def' | 'fn'
 
    comment = <#';+'> <ws>* #'[^\\s].*$'
