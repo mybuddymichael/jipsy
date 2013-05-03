@@ -59,3 +59,8 @@
                       "\n}\n"))
    :number read-string
    :expression (fn [e] (str e ";"))})
+
+(defn parse [input]
+  (->> (parser input)
+       (instaparse/transform transforms)
+       (print)))
