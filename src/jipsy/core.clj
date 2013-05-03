@@ -46,3 +46,16 @@
 
      comment = <#';+'> <ws>* #'[^\\s].*$'
      ws = #'[\\s,]'"))
+
+(def transforms
+  {:program str
+   :form str
+   :array vector
+   :argslist (fn [& args] (clojure.string/join ", " args))
+   :identifier read-string
+   :definition (fn [i a e]
+                 (str "var " i " = function " i "(" a ") {\n  "
+                      e
+                      "\n}\n"))
+   :number read-string
+   :expression (fn [e] (str e ";"))})
