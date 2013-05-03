@@ -20,12 +20,12 @@
      assignment = <'(def'> <ws>+ identifier (<ws>+ expression)? <ws>* <')'>
 
      expression = number
-                  | string
-                  | object
-                  | array
-                  | identifier
-                  | call
-                  | comment
+                | string
+                | object
+                | array
+                | identifier
+                | call
+                | comment
 
      call = <'('> <ws>* identifier (<ws>+ expression)* <ws>* <')'>
           | <'('> <ws>* (addop | mulop) <ws>+ expression (<ws>+ expression)* <ws>* <')'>
